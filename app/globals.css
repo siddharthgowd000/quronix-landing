@@ -1,26 +1,280 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1. Theme Configuration */
+@theme {
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Color Scale */
+  --color-primary-50: #e6f7ff;
+  --color-primary-100: #bae7ff;
+  --color-primary-200: #91d5ff;
+  --color-primary-300: #69c0ff;
+  --color-primary-400: #40a9ff;
+  --color-primary-500: #1890ff;
+  --color-primary-600: #096dd9;
+  --color-primary-700: #0050b3;
+  --color-primary-800: #003a8c;
+  --color-primary-900: #002766;
+
+  --color-secondary-500: #722ed1;
+  --color-tertiary-500: #13c2c2;
+  --color-accent-500: #eb2f96;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* 2. Global Base Styles */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+  }
+
+  * {
+    @apply border-neutral-200 outline-hidden;
+  }
+
+  body {
+    @apply bg-white text-neutral-900 antialiased selection:bg-primary-100 selection:text-primary-900;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-neutral-950 font-bold;
+    text-wrap: balance;
+  }
+
+  p {
+    @apply leading-relaxed text-neutral-600;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 3. High-End UI Utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xs;
+  }
+
+  .glass-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  .mask-radial-faded {
+    mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  }
+
+  .text-clinical {
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.1em;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+}
+
+/* 4. Space Robotics Animations */
+@layer utilities {
+  /* Falling Particle Animation */
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(20px) rotate(180deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-fall {
+    animation: fall linear infinite;
+  }
+
+  /* Falling with Rotation */
+  @keyframes fall-rotate {
+    0% {
+      transform: translateY(-100vh) translateX(0) rotate(0deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.6;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(100vh) translateX(-30px) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-fall-rotate {
+    animation: fall-rotate linear infinite;
+  }
+
+  /* Zigzag Falling */
+  @keyframes fall-zigzag {
+    0% {
+      transform: translateY(-100vh) translateX(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 0.7;
+    }
+    25% {
+      transform: translateY(-50vh) translateX(40px);
+    }
+    50% {
+      transform: translateY(0vh) translateX(-40px);
+    }
+    75% {
+      transform: translateY(50vh) translateX(40px);
+    }
+    90% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(100vh) translateX(0);
+      opacity: 0;
+    }
+  }
+
+  .animate-fall-zigzag {
+    animation: fall-zigzag linear infinite;
+  }
+
+  /* Floating Orbs */
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 20s ease-in-out infinite;
+  }
+
+  @keyframes float-slower {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(-40px, 30px) scale(0.9);
+    }
+    66% {
+      transform: translate(30px, -20px) scale(1.1);
+    }
+  }
+
+  .animate-float-slower {
+    animation: float-slower 25s ease-in-out infinite;
+  }
+
+  @keyframes float-slowest {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(20px, 40px) scale(1.05);
+    }
+    66% {
+      transform: translate(-30px, -30px) scale(0.95);
+    }
+  }
+
+  .animate-float-slowest {
+    animation: float-slowest 30s ease-in-out infinite;
+  }
+
+  /* Shimmer Line Effect */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer linear infinite;
+  }
+
+  /* Scan Line Effect */
+  @keyframes scan {
+    0% {
+      top: -2px;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+
+  .animate-scan {
+    animation: scan 8s linear infinite;
+  }
+
+  /* Pulse Glow */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+}
+
+/* 5. Reveal Animation for Sections */
+@layer utilities {
+  .reveal {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+
+  @keyframes reveal {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+}
+
+/* 6. Smooth Scrolling */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 }
