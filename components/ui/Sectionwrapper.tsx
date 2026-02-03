@@ -91,7 +91,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
 
       <motion.div
         className={`${maxWidths[maxWidth]} mx-auto px-6 relative z-10`}
-        variants={animate ? containerVariants : undefined}
+        // variants={animate ? containerVariants : undefined}
         initial={animate ? 'hidden' : undefined}
         animate={animate && isInView ? 'visible' : undefined}
       >
