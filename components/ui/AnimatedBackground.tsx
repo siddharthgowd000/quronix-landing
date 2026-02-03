@@ -7,7 +7,7 @@ export default function AnimatedBackground() {
   return (
     <div className="min-h-screen fixed inset-0 overflow-hidden pointer-events-none -z-10">
       {/* Base Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20" />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-blue-50/30 to-purple-50/20" />
 
       {/* Animated Grid Pattern */}
       <div 
@@ -185,7 +185,7 @@ export default function AnimatedBackground() {
         {linePositions.map((pos, i) => (
           <div
             key={`line-${i}`}
-            className="absolute h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent animate-shimmer"
+            className="absolute h-px bg-linear-to-r from-transparent via-blue-400/20 to-transparent animate-shimmer"
             style={{
               top: `${pos.top}%`,
               left: '-100%',
