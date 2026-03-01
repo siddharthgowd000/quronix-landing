@@ -136,10 +136,10 @@ const Applications = () => {
     >
       {/* Section Header */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900 dark:text-neutral-50">
           Deployed Across Critical Environments
         </h2>
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
           Trusted in healthcare, logistics, and industrial settings
         </p>
       </div>
@@ -182,18 +182,18 @@ const Applications = () => {
         {/* Navigation Arrows */}
         <button
           onClick={() => paginate(-1)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/90 transition-all duration-300 hover:scale-110 group"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/90 dark:hover:bg-neutral-800/90 transition-all duration-300 hover:scale-110 group"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="w-6 h-6 text-neutral-700 group-hover:text-primary-600 transition-colors" />
+          <ChevronLeft className="w-6 h-6 text-neutral-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
         </button>
 
         <button
           onClick={() => paginate(1)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/90 transition-all duration-300 hover:scale-110 group"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-white/90 dark:hover:bg-neutral-800/90 transition-all duration-300 hover:scale-110 group"
           aria-label="Next slide"
         >
-          <ChevronRight className="w-6 h-6 text-neutral-700 group-hover:text-primary-600 transition-colors" />
+          <ChevronRight className="w-6 h-6 text-neutral-700 dark:text-neutral-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" />
         </button>
 
         {/* Navigation Dots */}
@@ -208,7 +208,7 @@ const Applications = () => {
               className={`transition-all duration-300 rounded-full ${
                 index === currentIndex
                   ? 'w-12 h-3 bg-linear-to-r from-primary-500 to-secondary-500'
-                  : 'w-3 h-3 bg-neutral-300 hover:bg-neutral-400'
+                  : 'w-3 h-3 bg-neutral-300 dark:bg-neutral-600 hover:bg-neutral-400 dark:hover:bg-neutral-500'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

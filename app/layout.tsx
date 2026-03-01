@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -26,15 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased relative min-h-screen overflow-x-hidden">
-        {/* Animated Background Component */}
-        <AnimatedBackground />
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased relative min-h-screen overflow-x-hidden bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+        <ThemeProvider>
+          {/* Animated Background Component */}
+          <AnimatedBackground />
 
-        {/* Content */}
-        <div className="relative z-0">
-          {children}
-        </div>
+          {/* Content */}
+          <div className="relative z-0">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

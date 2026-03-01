@@ -118,12 +118,12 @@ const FeatureCard = ({ feature, index }: { feature: Feature; index: number }) =>
         
         {/* Animated Gradient Border */}
         <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500 via-secondary-500 to-tertiary-500 opacity-20 blur-xl" />
-          <div className="absolute inset-[1px] rounded-3xl bg-white" />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-500 via-secondary-500 to-tertiary-500 opacity-20 dark:opacity-30 blur-xl" />
+          <div className="absolute inset-[1px] rounded-3xl bg-white dark:bg-neutral-900" />
         </div>
 
         {/* Grid Pattern Background */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none">
           <svg width="100%" height="100%">
             <defs>
               <pattern id={`grid-${feature.id}`} width="32" height="32" patternUnits="userSpaceOnUse">
@@ -132,7 +132,7 @@ const FeatureCard = ({ feature, index }: { feature: Feature; index: number }) =>
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1"
-                  className="text-neutral-900"
+                  className="text-neutral-900 dark:text-neutral-100"
                 />
               </pattern>
             </defs>
@@ -188,10 +188,10 @@ const FeatureCard = ({ feature, index }: { feature: Feature; index: number }) =>
                 transition={{ delay: index * 0.1 + 0.3 }}
                 className="flex flex-col items-end"
               >
-                <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                <span className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 dark:from-primary-400 dark:to-secondary-400 bg-clip-text text-transparent">
                   {feature.metric}
                 </span>
-                <span className="text-xs text-clinical text-neutral-500 mt-1">
+                <span className="text-xs text-clinical text-neutral-500 dark:text-neutral-400 mt-1">
                   {feature.metricLabel}
                 </span>
               </motion.div>
@@ -200,16 +200,16 @@ const FeatureCard = ({ feature, index }: { feature: Feature; index: number }) =>
 
           {/* Text Content */}
           <div>
-            <h3 className="text-xl font-bold mb-3 text-neutral-900 group-hover:text-primary-600 transition-colors duration-300">
+            <h3 className="text-xl font-bold mb-3 text-neutral-900 dark:text-neutral-50 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
               {feature.title}
             </h3>
-            <p className="text-neutral-600 leading-relaxed text-sm mb-4">
+            <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed text-sm mb-4">
               {feature.description}
             </p>
 
             {/* Learn More Link */}
             <motion.div
-              className="flex items-center gap-2 text-sm font-medium text-primary-600 opacity-0 group-hover:opacity-100 transition-all duration-300"
+              className="flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 opacity-0 group-hover:opacity-100 transition-all duration-300"
               initial={{ x: -10 }}
               whileHover={{ x: 0 }}
             >
@@ -267,19 +267,19 @@ const Features = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <Sparkles className="w-4 h-4 text-primary-500" />
-          <span className="text-sm font-medium text-clinical text-neutral-700">
+          <Sparkles className="w-4 h-4 text-primary-500 dark:text-primary-400" />
+          <span className="text-sm font-medium text-clinical text-neutral-700 dark:text-neutral-300">
             Enterprise Technology
           </span>
         </motion.div>
 
         {/* Main Heading */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-neutral-900 via-neutral-800 to-neutral-900 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-neutral-900 via-neutral-800 to-neutral-900 dark:from-neutral-100 dark:via-neutral-200 dark:to-neutral-100 bg-clip-text text-transparent">
           Advanced Technology Stack
         </h2>
         
         {/* Subheading */}
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
           Built on cutting-edge robotics, AI, and medical-grade engineering
         </p>
 
@@ -311,21 +311,21 @@ const Features = () => {
         <div className="inline-flex flex-col md:flex-row items-center gap-4 p-8 glass-card rounded-3xl max-w-2xl">
           <div className="flex items-center gap-3">
             <div className="w-3 h-3 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full animate-pulse" />
-            <span className="text-sm font-medium text-clinical text-neutral-700">
+            <span className="text-sm font-medium text-clinical text-neutral-700 dark:text-neutral-300">
               Ready to deploy
             </span>
           </div>
-          <div className="hidden md:block w-px h-8 bg-neutral-200" />
+          <div className="hidden md:block w-px h-8 bg-neutral-200 dark:bg-neutral-700" />
           <div className="flex items-center gap-3">
-            <Shield className="w-5 h-5 text-primary-500" />
-            <span className="text-sm font-medium text-clinical text-neutral-700">
+            <Shield className="w-5 h-5 text-primary-500 dark:text-primary-400" />
+            <span className="text-sm font-medium text-clinical text-neutral-700 dark:text-neutral-300">
               Medical-grade certified
             </span>
           </div>
-          <div className="hidden md:block w-px h-8 bg-neutral-200" />
+          <div className="hidden md:block w-px h-8 bg-neutral-200 dark:bg-neutral-700" />
           <div className="flex items-center gap-3">
-            <Network className="w-5 h-5 text-secondary-500" />
-            <span className="text-sm font-medium text-clinical text-neutral-700">
+            <Network className="w-5 h-5 text-secondary-500 dark:text-secondary-400" />
+            <span className="text-sm font-medium text-clinical text-neutral-700 dark:text-neutral-300">
               Cloud-connected
             </span>
           </div>

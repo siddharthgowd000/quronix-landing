@@ -151,7 +151,7 @@ const Contact = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Get in Touch
           </h2>
-          <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
             Connect with our team of experts to discuss how our robotic solutions can transform your operations
           </p>
         </motion.div>
@@ -188,11 +188,11 @@ const Contact = () => {
                   </div>
 
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                    <h3 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
                       {contact.title}
                     </h3>
                     {contact.details.map((detail, idx) => (
-                      <p key={idx} className="text-sm text-neutral-600">
+                      <p key={idx} className="text-sm text-neutral-600 dark:text-neutral-400">
                         {detail}
                       </p>
                     ))}
@@ -222,10 +222,10 @@ const Contact = () => {
                 <Heart className="w-8 h-8 text-white" />
               </div>
             </div>
-            <h4 className="text-lg font-semibold text-neutral-900 mb-2">
+            <h4 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100 mb-2">
               Healthcare Certified
             </h4>
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
               IEC 60601 & ISO 13485 Compliant Systems
             </p>
           </motion.div>
@@ -247,13 +247,13 @@ const Contact = () => {
               </svg>
             </div>
 
-            <h3 className="text-3xl font-bold mb-6">Send Us a Message</h3>
+            <h3 className="text-3xl font-bold mb-6 text-neutral-900 dark:text-neutral-50">Send Us a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
               {/* Name & Email Row */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -263,13 +263,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 backdrop-blur-sm"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 dark:bg-neutral-800/50 dark:text-neutral-100 backdrop-blur-sm"
                     placeholder="Dr. Jane Smith"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -279,7 +279,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 backdrop-blur-sm"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 dark:bg-neutral-800/50 dark:text-neutral-100 backdrop-blur-sm"
                     placeholder="jane.smith@hospital.com"
                   />
                 </div>
@@ -288,7 +288,7 @@ const Contact = () => {
               {/* Organization & Category Row */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="organization" className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <label htmlFor="organization" className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                     Organization
                   </label>
                   <input
@@ -297,13 +297,13 @@ const Contact = () => {
                     name="organization"
                     value={formData.organization}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 backdrop-blur-sm"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 dark:bg-neutral-800/50 dark:text-neutral-100 backdrop-blur-sm"
                     placeholder="Hospital / Company Name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="category" className="block text-sm font-semibold text-neutral-700 mb-2">
+                  <label htmlFor="category" className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                     Inquiry Type *
                   </label>
                   <select
@@ -312,7 +312,7 @@ const Contact = () => {
                     value={formData.category}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 backdrop-blur-sm"
+                    className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 dark:bg-neutral-800/50 dark:text-neutral-100 backdrop-blur-sm"
                   >
                     <option value="general">General Inquiry</option>
                     <option value="healthcare">Healthcare Solutions</option>
@@ -326,7 +326,7 @@ const Contact = () => {
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                   Message *
                 </label>
                 <textarea
@@ -336,7 +336,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 backdrop-blur-sm resize-none"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 focus:border-primary-500 focus:outline-none transition-colors duration-300 bg-white/50 dark:bg-neutral-800/50 dark:text-neutral-100 backdrop-blur-sm resize-none"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
@@ -381,9 +381,9 @@ const Contact = () => {
               </div>
 
               {/* Medical-Themed Info Text */}
-              <div className="flex items-start gap-3 p-4 rounded-xl bg-primary-50 border border-primary-100">
-                <Activity className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
-                <p className="text-sm text-primary-800">
+              <div className="flex items-start gap-3 p-4 rounded-xl bg-primary-50 dark:bg-primary-900/30 border border-primary-100 dark:border-primary-800">
+                <Activity className="w-5 h-5 text-primary-600 dark:text-primary-400 flex-shrink-0 mt-0.5" />
+                <p className="text-sm text-primary-800 dark:text-primary-200">
                   <strong>Fast Response Time:</strong> Our team typically responds to healthcare-related inquiries within 4 hours during business hours. For urgent medical device support, please call our hotline.
                 </p>
               </div>
@@ -412,7 +412,7 @@ const Contact = () => {
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-2 h-2 rounded-full bg-linear-to-r from-primary-500 to-secondary-500 animate-pulse" />
-            <span className="text-sm font-medium text-neutral-700">{badge}</span>
+            <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">{badge}</span>
           </motion.div>
         ))}
       </motion.div>

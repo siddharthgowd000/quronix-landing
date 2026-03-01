@@ -21,19 +21,19 @@ export default function Home() {
     <>
      <div className="min-h-screen absolute inset-0 overflow-hidden pointer-events-none">
         {/* ECG Line Pattern */}
-        <svg className="absolute top-0 left-0 w-full h-32 opacity-5" viewBox="0 0 1200 100">
+        <svg className="absolute top-0 left-0 w-full h-32 opacity-5 dark:opacity-[0.08]" viewBox="0 0 1200 100">
           <path
             d="M0 50 L200 50 L220 30 L240 70 L260 50 L280 50 L300 20 L320 80 L340 50 L1200 50"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="text-primary-500"
+            className="text-primary-500 dark:text-primary-400"
           />
         </svg>
 
         {/* Floating Medical Icons */}
         <motion.div
-          className="absolute top-20 right-20 text-primary-200"
+          className="absolute top-20 right-20 text-primary-200 dark:text-primary-500/30"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
         >
@@ -41,7 +41,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="absolute bottom-40 left-10 text-secondary-200"
+          className="absolute bottom-40 left-10 text-secondary-200 dark:text-secondary-500/30"
           animate={{ y: [0, 15, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 8, repeat: Infinity }}
         >
@@ -49,7 +49,7 @@ export default function Home() {
         </motion.div>
 
         <motion.div
-          className="absolute top-1/2 right-10 text-tertiary-200"
+          className="absolute top-1/2 right-10 text-tertiary-200 dark:text-tertiary-500/30"
           animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
           transition={{ duration: 7, repeat: Infinity }}
         >
@@ -58,7 +58,7 @@ export default function Home() {
 
         {/* Pulse Rings */}
         <motion.div
-          className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full border-2 border-primary-300"
+          className="absolute top-1/3 left-1/4 w-32 h-32 rounded-full border-2 border-primary-300 dark:border-primary-500/40"
           animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }}
           transition={{ duration: 3, repeat: Infinity }}
         />

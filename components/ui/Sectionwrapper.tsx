@@ -27,9 +27,9 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const backgrounds = {
-    default: 'bg-white',
-    gradient: 'bg-gradient-to-br from-neutral-50 via-primary-50/30 to-secondary-50/20',
-    pattern: 'bg-white relative overflow-hidden',
+    default: 'bg-white dark:bg-neutral-950/50',
+    gradient: 'bg-gradient-to-br from-neutral-50 via-primary-50/30 to-secondary-50/20 dark:from-neutral-950 dark:via-neutral-900/80 dark:to-neutral-950',
+    pattern: 'bg-white dark:bg-neutral-950/50 relative overflow-hidden',
     glass: 'glass',
     none: 'bg-transparent',
   };
@@ -71,7 +71,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
     >
       {/* Pattern Background (only when background='pattern') */}
       {background === 'pattern' && (
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 opacity-20 dark:opacity-10 pointer-events-none">
           <svg width="100%" height="100%">
             <defs>
               <pattern id="section-grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -80,7 +80,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="0.5"
-                  className="text-primary-300"
+                  className="text-primary-300 dark:text-primary-600/50"
                 />
               </pattern>
             </defs>

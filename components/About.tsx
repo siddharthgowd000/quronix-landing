@@ -88,7 +88,7 @@ const About = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="0.5"
-                className="text-primary-400"
+                className="text-primary-400 dark:text-primary-600/60"
               />
             </pattern>
           </defs>
@@ -106,11 +106,11 @@ const About = () => {
       >
         {/* Left Column - Text Content */}
         <motion.div variants={textVariants as Variants} className="flex-1 space-y-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-neutral-900 dark:text-neutral-50">
             About Quronix Technologies
           </h2>
 
-          <p className="text-lg text-neutral-700 leading-relaxed">
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
             Quronix Technologies is a{' '}
             <span className="font-semibold bg-linear-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
               deep-technology company
@@ -118,7 +118,7 @@ const About = () => {
             focused on intelligent robotic and mechatronic systems that solve real-world challenges across healthcare, logistics, and industrial automation.
           </p>
 
-          <p className="text-lg text-neutral-700 leading-relaxed">
+          <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
             We operate at the{' '}
             <span className="font-semibold bg-linear-to-r from-secondary-500 to-tertiary-500 bg-clip-text text-transparent">
               intersection of robotics, medical devices, and advanced engineering
@@ -126,8 +126,8 @@ const About = () => {
             , bringing together expertise in mechanical design, embedded systems, AI, and regulatory compliance to deliver production-ready solutions.
           </p>
 
-          <div className="pt-4 pl-6 border-l-4 border-primary-500">
-            <p className="text-lg text-neutral-700 leading-relaxed italic">
+          <div className="pt-4 pl-6 border-l-4 border-primary-500 dark:border-primary-400">
+            <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed italic">
               Our philosophy is simple:{' '}
               <span className="font-bold bg-linear-to-r from-primary-600 via-secondary-500 to-tertiary-500 bg-clip-text text-transparent">
                 Intelligence must translate into motion, action, and impact.
@@ -163,10 +163,10 @@ const About = () => {
 
                     {/* Text Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-neutral-900 mb-1">
+                      <h3 className="text-2xl font-bold text-neutral-900 dark:text-neutral-50 mb-1">
                         {stat.title}
                       </h3>
-                      <p className="text-sm text-neutral-600 font-medium">
+                      <p className="text-sm text-neutral-600 dark:text-neutral-400 font-medium">
                         {stat.description}
                       </p>
                     </div>
@@ -193,7 +193,7 @@ const About = () => {
                 <div className="w-2 h-2 bg-linear-to-r from-secondary-500 to-tertiary-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
                 <div className="w-2 h-2 bg-linear-to-r from-tertiary-500 to-primary-500 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
               </div>
-              <span className="text-sm font-medium text-neutral-700">
+              <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">
                 Innovation in Motion
               </span>
             </div>

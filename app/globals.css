@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Dark mode: class-based (for next-themes toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* 1. Theme Configuration */
 @theme {
   --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
@@ -29,30 +32,35 @@
     --foreground: #0a0a0a;
   }
 
+  .dark {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+  }
+
   * {
-    @apply border-neutral-200 outline-hidden;
+    @apply border-neutral-200 outline-hidden dark:border-neutral-800;
   }
 
   body {
-    @apply bg-white text-neutral-900 antialiased selection:bg-primary-100 selection:text-primary-900;
+    @apply bg-white text-neutral-900 antialiased selection:bg-primary-100 selection:text-primary-900 dark:bg-neutral-950 dark:text-neutral-100 dark:selection:bg-primary-900/30 dark:selection:text-primary-100;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight text-neutral-950 font-bold;
+    @apply font-heading tracking-tight text-neutral-950 font-bold dark:text-neutral-50;
     text-wrap: balance;
   }
 
   p {
-    @apply leading-relaxed text-neutral-600;
+    @apply leading-relaxed text-neutral-600 dark:text-neutral-400;
   }
 }
 
 /* 3. High-End UI Utilities */
 @layer utilities {
   .glass {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xs;
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xs dark:bg-neutral-900/70 dark:border-neutral-700/30;
   }
 
   .glass-card {
@@ -60,6 +68,12 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  }
+
+  .dark .glass-card {
+    background: linear-gradient(135deg, rgba(38, 38, 38, 0.8) 0%, rgba(23, 23, 23, 0.6) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
   }
 
   .mask-radial-faded {

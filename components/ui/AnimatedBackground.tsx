@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 export default function AnimatedBackground() {
   return (
     <div className="min-h-screen fixed inset-0 overflow-hidden pointer-events-none -z-10">
-      {/* Base Gradient */}
-      <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-blue-50/30 to-purple-50/20" />
+      {/* Base Gradient - light / dark */}
+      <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-900" />
 
       {/* Animated Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.15]"
+        className="absolute inset-0 opacity-[0.15] dark:opacity-[0.08]"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
@@ -22,7 +22,7 @@ export default function AnimatedBackground() {
       />
 
       {/* Radial Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/40 to-white/80" />
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-white/40 to-white/80 dark:via-neutral-900/50 dark:to-neutral-950/90" />
 
       {/* ECG Line Pattern - Multiple instances */}
       <svg className="absolute top-0 left-0 w-full h-32 opacity-5" viewBox="0 0 1200 100" preserveAspectRatio="none">

@@ -188,7 +188,7 @@ const ServiceCard = ({ category, index }: { category: ServiceCategory; index: nu
       transition={{ duration: 0.5, delay: index * 0.06 }}
       className="group"
     >
-      <div className="relative h-full glass-card rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:shadow-xl border border-white/40">
+      <div className="relative h-full glass-card rounded-2xl p-6 overflow-hidden transition-all duration-300 hover:shadow-xl border border-white/40 dark:border-neutral-700/50">
         {/* Left accent bar */}
         <div
           className={`absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b ${category.gradient} rounded-l-2xl opacity-90`}
@@ -203,12 +203,12 @@ const ServiceCard = ({ category, index }: { category: ServiceCategory; index: nu
           >
             <Icon className="w-6 h-6 text-white" strokeWidth={2.5} />
           </div>
-          <h3 className="text-lg font-bold text-neutral-900 mb-3 pr-2 group-hover:text-primary-700 transition-colors">
+          <h3 className="text-lg font-bold text-neutral-900 dark:text-neutral-50 mb-3 pr-2 group-hover:text-primary-700 dark:group-hover:text-primary-400 transition-colors">
             {category.title}
           </h3>
           <ul className="space-y-2">
             {category.items.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-neutral-600 leading-snug">
+              <li key={i} className="flex items-start gap-2 text-sm text-neutral-600 dark:text-neutral-400 leading-snug">
                 <span className="mt-1.5 w-1 h-1 rounded-full bg-primary-400 shrink-0" />
                 <span>{item}</span>
               </li>
@@ -243,21 +243,21 @@ const Services = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-6">
-          <Wrench className="w-4 h-4 text-primary-500" />
-          <span className="text-sm font-medium text-clinical text-neutral-700">
+          <Wrench className="w-4 h-4 text-primary-500 dark:text-primary-400" />
+          <span className="text-sm font-medium text-clinical text-neutral-700 dark:text-neutral-300">
             Full-Stack Capability
           </span>
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-neutral-900 dark:text-neutral-50">
           Our Services
         </h2>
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-4xl mx-auto mb-4">
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto mb-4">
           End-to-End Robotics & Electromechanical{' '}
-          <span className="font-semibold bg-linear-to-r from-primary-600 to-secondary-500 bg-clip-text text-transparent">
+          <span className="font-semibold bg-linear-to-r from-primary-500 to-secondary-500 dark:from-primary-400 dark:to-secondary-400 bg-clip-text text-transparent">
             Product-as-a-Service (PaaS)
           </span>
         </p>
-        <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+        <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
           We deliver complete, production-ready robotic and electromechanical systems — from concept
           and architecture to deployment, lifecycle support, and continuous upgrades. Our services
           span software, UI/UX, electronics, PCB design, mechanical engineering, actuation, and
@@ -288,10 +288,10 @@ const Services = () => {
         transition={{ duration: 0.6 }}
         className="relative"
       >
-        <div className="glass-card rounded-3xl p-8 md:p-10 overflow-hidden border border-white/40">
-          <div className="absolute inset-0 bg-linear-to-br from-primary-500/5 via-transparent to-secondary-500/5 pointer-events-none rounded-3xl" />
+        <div className="glass-card rounded-3xl p-8 md:p-10 overflow-hidden border border-white/40 dark:border-neutral-700/50">
+          <div className="absolute inset-0 bg-linear-to-br from-primary-500/5 via-transparent to-secondary-500/5 dark:from-primary-500/10 dark:to-secondary-500/10 pointer-events-none rounded-3xl" />
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-6 text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-50 mb-6 text-center">
               Why Choose Us
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -302,12 +302,12 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-center gap-3 p-4 rounded-xl bg-white/60 hover:bg-white/80 transition-colors"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-white/60 dark:bg-neutral-800/60 hover:bg-white/80 dark:hover:bg-neutral-800/80 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-linear-to-br from-primary-500 to-secondary-500 flex items-center justify-center shrink-0">
                     <ArrowRight className="w-5 h-5 text-white" strokeWidth={2.5} />
                   </div>
-                  <span className="text-sm font-medium text-neutral-700">{item}</span>
+                  <span className="text-sm font-medium text-neutral-700 dark:text-neutral-300">{item}</span>
                 </motion.div>
               ))}
             </div>

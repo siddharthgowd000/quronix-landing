@@ -40,8 +40,14 @@ const Hero = () => {
   const bgX = useTransform(mouseX, [0, 2000], [20, -20]);
 
   const bgY = useTransform(mouseY, [0, 1000], [20, -20]);
-
-
+  const scrollToProducts = () => {
+    const el = document.getElementById('products');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
 
@@ -103,7 +109,7 @@ const Hero = () => {
 
           animate={{ opacity: 1, y: 0 }}
 
-          className="mb-10 inline-flex items-center gap-3 rounded-full border border-primary-200 bg-primary-50/50 px-4 py-1.5 backdrop-blur-md"
+          className="mb-10 inline-flex items-center gap-3 rounded-full border border-primary-200 dark:border-primary-800 bg-primary-50/50 dark:bg-primary-900/30 px-4 py-1.5 backdrop-blur-md"
 
         >
 
@@ -115,7 +121,7 @@ const Hero = () => {
 
           </span>
 
-          <span className="font-mono text-[10px] font-bold tracking-[0.2em] text-primary-700 uppercase">
+          <span className="font-mono text-[10px] font-bold tracking-[0.2em] text-primary-700 dark:text-primary-300 uppercase">
 
             Cognitive Core Active
 
@@ -129,7 +135,7 @@ const Hero = () => {
 
         <motion.h1
 
-          className="font-heading text-6xl font-black tracking-tight text-neutral-950 md:text-8xl lg:leading-[1.1]"
+          className="font-heading text-6xl font-black tracking-tight text-neutral-950 dark:text-neutral-50 md:text-8xl lg:leading-[1.1]"
 
           initial={{ opacity: 0, y: 20 }}
 
@@ -155,7 +161,7 @@ const Hero = () => {
 
         <motion.p
 
-          className="mx-auto mt-8 max-w-2xl text-lg font-light leading-relaxed text-neutral-500 md:text-xl"
+          className="mx-auto mt-8 max-w-2xl text-lg font-light leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl"
 
           initial={{ opacity: 0 }}
 
@@ -165,7 +171,7 @@ const Hero = () => {
 
         >
 
-          Architecting the future of <span className="font-medium text-neutral-900">robotic intelligence</span>. Precision mechatronics engineered for healthcare and global logistics.
+          Architecting the future of <span className="font-medium text-neutral-900 dark:text-neutral-100">robotic intelligence</span>. Precision mechatronics engineered for healthcare and global logistics.
 
         </motion.p>
 
@@ -185,7 +191,10 @@ const Hero = () => {
 
         >
 
-          <button className="group relative w-full overflow-hidden rounded-full bg-neutral-950 px-8 py-4 text-sm font-semibold text-white transition-all hover:bg-neutral-800 sm:w-auto">
+          <button
+            onClick={scrollToProducts}
+            className="group relative w-full overflow-hidden rounded-full bg-neutral-950 dark:bg-white px-8 py-4 text-sm font-semibold text-white dark:text-neutral-950 transition-all hover:bg-neutral-800 dark:hover:bg-neutral-100 sm:w-auto"
+          >
 
             <span className="relative z-10 flex items-center gap-2">
 
@@ -199,7 +208,10 @@ const Hero = () => {
 
          
 
-          <button className="w-full rounded-full border border-neutral-200 bg-white px-8 py-4 text-sm font-semibold text-neutral-950 transition-all hover:bg-neutral-50 hover:border-neutral-300 sm:w-auto">
+          <button
+            onClick={scrollToContact}
+            className="w-full rounded-full border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-900 px-8 py-4 text-sm font-semibold text-neutral-950 dark:text-neutral-100 transition-all hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-600 sm:w-auto"
+          >
 
             Schedule Demo
 
@@ -225,7 +237,7 @@ const Hero = () => {
 
         <div className="h-14 w-[1px] bg-linear-to-b from-primary-500 to-transparent" />
 
-        <span className="font-mono text-[9px] tracking-[0.3em] text-neutral-400 uppercase">Initialization Scroll</span>
+        <span className="font-mono text-[9px] tracking-[0.3em] text-neutral-400 dark:text-neutral-500 uppercase">Initialization Scroll</span>
 
       </motion.div>
 

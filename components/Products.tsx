@@ -138,10 +138,10 @@ const Products = () => {
     >
       {/* Section Header */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-primary-600 via-secondary-600 to-primary-600 bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-primary-500 via-secondary-500 to-primary-500 dark:from-primary-400 dark:via-secondary-400 dark:to-primary-400 bg-clip-text text-transparent">
           Our Products
         </h2>
-        <p className="text-xl md:text-2xl text-neutral-600 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">
           Intelligent robotic products designed for real-world deployment
         </p>
       </div>
@@ -151,17 +151,17 @@ const Products = () => {
         {productsData.map((product) => (
           <div key={product.id} className="product-card-placeholder">
             {/* Product cards will be rendered here */}
-            <div className="p-6 border-2 border-dashed border-neutral-300 rounded-xl">
+            <div className="p-6 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl bg-white/50 dark:bg-neutral-900/60 backdrop-blur-sm">
               <div className="flex items-center gap-4 mb-4">
-                <product.icon className="w-8 h-8 text-primary-500" />
-                <h3 className="text-xl font-bold">{product.title}</h3>
+                <product.icon className="w-8 h-8 text-primary-500 dark:text-primary-400" />
+                <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">{product.title}</h3>
               </div>
-              <p className="text-neutral-600 mb-4">{product.description}</p>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-4">{product.description}</p>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-sm text-neutral-700 mb-2">Capabilities:</h4>
-                  <ul className="text-sm text-neutral-600 space-y-1">
+                  <h4 className="font-semibold text-sm text-neutral-700 dark:text-neutral-300 mb-2">Capabilities:</h4>
+                  <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
                     {product.capabilities.slice(0, 3).map((capability, idx) => (
                       <li key={idx}>• {capability}</li>
                     ))}
@@ -169,8 +169,8 @@ const Products = () => {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-sm text-neutral-700 mb-2">Applications:</h4>
-                  <ul className="text-sm text-neutral-600 space-y-1">
+                  <h4 className="font-semibold text-sm text-neutral-700 dark:text-neutral-300 mb-2">Applications:</h4>
+                  <ul className="text-sm text-neutral-600 dark:text-neutral-400 space-y-1">
                     {product.applications.slice(0, 3).map((application, idx) => (
                       <li key={idx}>• {application}</li>
                     ))}
