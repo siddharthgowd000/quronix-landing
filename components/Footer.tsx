@@ -45,10 +45,9 @@ const footerSections: FooterSection[] = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/quronix-technologies', label: 'LinkedIn' },
   { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-  { icon: Github, href: 'https://github.com', label: 'GitHub' },
-  { icon: Mail, href: 'mailto:contact@quronix.com', label: 'Email' },
+  { icon: Mail, href: 'mailto:quronixtechnologies@gmail.com', label: 'Email' },
 ];
 
 const Footer = () => {

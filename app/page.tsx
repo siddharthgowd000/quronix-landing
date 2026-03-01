@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import Products from "@/components/Products";
 import Features from "@/components/Features";
+import Services from "@/components/Services";
 import About from "@/components/About";
 import Applications from "@/components/Applications";
 import Footer from "@/components/Footer";
@@ -79,6 +80,9 @@ export default function Home() {
  
       {/* Technology Section */}
       <Features />
+
+      {/* Services Section */}
+      <Services />
 
       {/* About Section */}
       <About />

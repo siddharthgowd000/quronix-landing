@@ -27,27 +27,22 @@ const contactData: ContactInfo[] = [
   {
     icon: Mail,
     title: 'Email',
-    details: ['info@quronix.com', 'support@quronix.com'],
+    details: ['quronixtechnologies@gmail.com'],
     gradient: 'from-primary-500 to-primary-600',
   },
   {
     icon: Phone,
     title: 'Phone',
-    details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+    details: ['+91 9311844657'],
     gradient: 'from-secondary-500 to-secondary-600',
   },
   {
     icon: MapPin,
     title: 'Location',
-    details: ['123 Innovation Drive', 'Medical District, CA 94016'],
+    details: ['Hyderabad, Telangana, India'],
     gradient: 'from-tertiary-500 to-tertiary-600',
   },
-  {
-    icon: Clock,
-    title: 'Business Hours',
-    details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat: 10:00 AM - 4:00 PM'],
-    gradient: 'from-accent-500 to-accent-600',
-  },
+ 
 ];
 
 const Contact = () => {
